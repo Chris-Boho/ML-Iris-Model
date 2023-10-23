@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-import uvicorn
 from sklearn.datasets import load_iris
 from sklearn.naive_bayes import GaussianNB
 from pydantic import BaseModel
@@ -23,7 +22,7 @@ clf.fit(X,Y)
 
 @app.get('/')
 def home():
-    return {"Iris Home": "Welcome!ea"}
+    return {"Iris Home": "Welcome!"}
 
 @app.post('/predit')
 def predict(data: request_body):
